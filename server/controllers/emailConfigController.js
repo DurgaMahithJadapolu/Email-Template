@@ -57,7 +57,7 @@ exports.renderAndDownloadTemplate = (req, res) => {
         .replace('{{imageUrl}}', imageUrl);
 
       fs.writeFileSync(outputPath, renderedHtml);
-      res.send({ downloadUrl: `http://localhost:5000/output/generated.html` });
+      res.send({ downloadUrl: `https://email-template-zyw4.onrender.com/output/generated.html` });
     });
   });
 };
