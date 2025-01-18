@@ -19,7 +19,7 @@ const handleFileUpload = async (event) => {
       formData.append('image', file);
 
       try {
-        const response = await axios.post('http://localhost:5000/api/uploadImage', formData);
+        const response = await axios.post('https://email-template-zyw4.onrender.com/api/uploadImage', formData);
         setUploadedImageUrl(response.data.imageUrl);
         setIsSuccessPopupVisible1(true); // Show success popup
       } catch (error) {
@@ -32,7 +32,7 @@ const handleFileUpload = async (event) => {
     const emailConfig = { title, content, imageUrl: uploadedImageUrl };
 
     try {
-      await axios.post('http://localhost:5000/api/uploadEmailConfig', emailConfig);
+      await axios.post('https://email-template-zyw4.onrender.com/api/uploadEmailConfig', emailConfig);
       setIsSuccessPopupVisible(true); // Show success popup
     } catch (error) {
       console.error(error);
@@ -42,7 +42,7 @@ const handleFileUpload = async (event) => {
 
   const handleFetchLayout = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/getEmailLayout');
+      const response = await axios.get('https://email-template-zyw4.onrender.com/api/getEmailLayout');
       const layoutHtml = response.data.html;
 
       // Replace the placeholders in the layout with actual values
@@ -61,7 +61,7 @@ const handleFileUpload = async (event) => {
 
   const handleRenderAndDownload = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/renderAndDownloadTemplate', { 
+      const response = await axios.post('https://email-template-zyw4.onrender.com/api/renderAndDownloadTemplate', { 
         title, 
         content, 
         imageUrl: uploadedImageUrl 
