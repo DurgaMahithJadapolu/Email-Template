@@ -18,13 +18,10 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
-const emailConfigRoutes = require('./Routes/emailConfigRoutes');
+const emailConfigRoutes = require('./routes/emailConfigRoutes');
 app.use('/api', emailConfigRoutes);
 
-// Server health check route
-app.use("/", (req, res) => {
-  res.send("Server is Running...");
-});
+
 
 // Serve static files
 app.use('/uploads', express.static('uploads'));
@@ -33,5 +30,4 @@ app.use('/output', express.static('output'));
 // Start server
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 
-// Export for Vercel
-module.exports = app;
+

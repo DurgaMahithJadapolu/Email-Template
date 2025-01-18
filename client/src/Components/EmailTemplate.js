@@ -81,11 +81,15 @@ const handleFileUpload = async (event) => {
         <h1 style={{textAlign:"center"}}>Email Template Builder</h1>
       <div>
         <label><strong>Title:</strong></label>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text"
+         placeholder='Enter Title here... '
+        value={title} onChange={(e) => setTitle(e.target.value)} />
       </div>
       <div>
         <label><strong>Content:</strong></label>
-        <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+        <textarea value={content} 
+        placeholder='Enter lager Content here... '
+        onChange={(e) => setContent(e.target.value)} />
       </div>
       <div>
         <label> <strong>Upload Image:</strong></label>
