@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
-const emailConfigRoutes = require('./routes/emailConfigRoutes');
+const emailConfigRoutes = require('./Routes/emailConfigRoutes');
 app.use('/api', emailConfigRoutes);
 
 
